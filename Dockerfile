@@ -13,6 +13,7 @@ RUN <<-EOT sh
 
 	adduser --shell /sbin/nologin --gecos '' --disabled-password i2p
 	mv /i2psnark /app && chown -R i2p:i2p /app
+	sed -i 's|127.0.0.1|0.0.0.0|g' /app/jetty-i2psnark.xml
 EOT
 
 EXPOSE 8002/tcp
