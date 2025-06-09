@@ -1,0 +1,11 @@
+version: '2'
+services:
+  i2psnark:
+    container_name: i2psnark
+    build:
+      context: .
+    restart: unless-stopped
+    ports:
+      - 8002:8002/tcp
+    volumes:
+      - ./data:/app/i2psnark
